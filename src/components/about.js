@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar';
 
+import './about.css';
+
 export default class About extends Component {
   state = {
     value: new Date(),
@@ -17,7 +19,6 @@ export default class About extends Component {
 
         <Calendar
             onChange={this.onChange}
-            showWeekNumbers
             value={value}
         />
       </div>

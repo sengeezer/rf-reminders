@@ -1,0 +1,14 @@
+.react-calendar {
+  width: 80%;
+}
+
+.react-calendar__navigation {
+  height: 75px;
+  background-color: cadetblue;
+}
+
+.react-calendar__navigation button {
+  font-size: 15px;
+  font-weight: bold;
+  color: #fafafa;
+}

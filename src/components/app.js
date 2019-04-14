@@ -5,11 +5,15 @@ import About from './about';
 import './app.css';
 
 const App = () => (
-  <div>
+  <div className="container">
     <header>
       <h1>RF Reminders</h1>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
+      <nav>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+        </ul>
+      </nav>      
     </header>
     <main>
       <Route exact path="/" component={Home} />
