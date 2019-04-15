@@ -1,5 +1,5 @@
 .react-calendar {
-  width: 80%;
+  width: 100%;
 }
 
 .react-calendar__navigation {
@@ -11,4 +11,29 @@
   font-size: 15px;
   font-weight: bold;
   color: #fafafa;
+}
+
+button.react-calendar__navigation__label {
+  font-size: 18px;
+}
+
+.react-calendar__month-view__weekdays {
+  font-size: 0.9em;
+}
+
+.react-calendar__tile {
+  text-align: left;
+  position: relative;
+  height: 150px;
+  max-height: 175px;
+}
+
+.react-calendar__tile abbr {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.react-calendar__month-view__days__day {
+  font-size: 0.85em;
 }
