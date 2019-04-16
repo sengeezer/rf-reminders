@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar';
 
+import TileContent from './TileContent';
+
 import './about.css';
 
-export default class About extends Component {
+class About extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,6 +18,9 @@ export default class About extends Component {
   onChange(value) {
     this.setState({ value });
   }
+  handleDaySelect(value) {
+    console.log('Selected', value);
+  }
   render() {
     const { value } = this.state;
 
@@ -26,8 +31,14 @@ export default class About extends Component {
         <Calendar
             onChange={this.onChange}
             value={value}
+            locale={'en-GB'}
+            selectRange={false}
+            onClickDay={this.handleDaySelect}
+            tileContent={({ date, view }) => (<TileContent date={date} tileView={view} tileText="Sample" />)}
         />
       </div>
     );
   }
 }
+
+export default About;
