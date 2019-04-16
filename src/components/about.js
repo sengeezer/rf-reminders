@@ -4,9 +4,15 @@ import Calendar from 'react-calendar';
 import './about.css';
 
 export default class About extends Component {
-  state = {
-    value: new Date(),
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: new Date(),
+    }
+
+    this.onChange = this.onChange.bind(this);
   }
+  
   onChange(value) {
     this.setState({ value });
   }
