@@ -56,3 +56,15 @@ button.react-calendar__tile:nth-of-type(n+29):nth-last-child(n+1) {
 .react-calendar__month-view__days__day {
   font-size: 0.85em;
 }
+
+.react-calendar__tile button.addReminder__button {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-weight: bold;
+  line-height: 1em;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #999;
+  border-radius: 15px;
+}
