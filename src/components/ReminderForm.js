@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 class ReminderForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      date: props.reminder ? moment(props.reminder.date) : moment(),
+      // TODO: Break down this.state.date into components
       month: props.reminder ? props.reminder.month : '04',
       day: props.reminder ? props.reminder.day : '02',
       year: props.reminder ? props.reminder.year : '2019',
@@ -97,6 +100,11 @@ class ReminderForm extends Component {
             value={this.state.color}
             onChange={this.onColorChange}
           />
+          <button
+            disabled={this.props.submitDisabled}
+            // onClick={this.props.handleClearSelected}
+            className="small"
+          >Submit</button>
         </form>
       </div>
     );

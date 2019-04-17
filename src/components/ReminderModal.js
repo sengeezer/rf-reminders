@@ -4,27 +4,36 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 
 import ReminderForm from './ReminderForm';
+import { createReminder } from '../actions/reminder';
 
 class ReminderModal extends Component {
   onSubmit(reminder) {
-    // this.props.startAddReminder(reminder);
+    this.props.createReminder(reminder);
     // this.props.history.push('/');
   }
   render() {
     return (
       <Modal
-        isOpen={!!this.props.selectedOption}
+        isOpen={!!this.props.shouldOpen}
         onRequestClose={this.props.handleClearSelected}
         contentLabel="Create or modify reminder"
         closeTimeoutMS={200}
         className="modal"
       >
-    <ReminderForm onSubmit={this.onSubmit} />
-  </Modal>
+        <ReminderForm onSubmit={this.onSubmit} submitDisabled={this.props.isCreating} />
+      </Modal>
     );
   }
 }
 
 Modal.setAppElement('#app');
 
-export default ReminderModal;
+const mapStateToProps = ({ reminder }) => ({
+  isCreating: reminder.isCreating,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  createReminder,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReminderModal);
