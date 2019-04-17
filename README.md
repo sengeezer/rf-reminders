@@ -2,6 +2,7 @@
 
 * App bootstrapped by [Create React App](https://github.com/facebook/create-react-app)
 * Redux integration inspired by [notrab](https://github.com/notrab/create-react-app-redux/)
+* Sub-patterns inspired by code from Andrew Mead's React course
 
 ----
 
