@@ -14,12 +14,14 @@ class About extends Component {
 
     this.onChange = this.onChange.bind(this);
   }
-  
   onChange(value) {
     this.setState({ value });
   }
   handleDaySelect(value) {
     console.log('Selected', value);
+  }
+  onSubmit(reminder) {
+    // transmit reminder to redux
   }
   render() {
     const { value } = this.state;
