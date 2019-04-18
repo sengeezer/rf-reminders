@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
+import './ReminderForm.css';
+
 class ReminderForm extends Component {
   constructor(props) {
     super(props);
@@ -62,47 +64,63 @@ class ReminderForm extends Component {
       <div>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
+          <label for="month">Month:</label>
           <input
             type="text"
+            name="month"
             placeholder="Month"
             value={this.state.month}
             onChange={this.onMonthChange}
           />
+
+          <label for="day">Day:</label>
           <input
             type="text"
+            name="day"
             placeholder="Day"
             value={this.state.day}
             onChange={this.onDayChange}
           />
+
+          <label for="year">Year:</label>
           <input
             type="text"
+            name="year"
             placeholder="Year"
             maxlength="4"
             value={this.state.year}
             onChange={this.onYearChange}
           />
+
+          <label for="time">Time:</label>
           <input
             type="text"
+            name="time"
             placeholder="Time"
             value={this.state.time}
             onChange={this.onTimeChange}
           />
+
+          <label for="text">Text:</label>
           <input
             type="text"
-            placeholder="Text"
+            name="text"
+            placeholder="Reminder text"
             maxlength="30"
             value={this.state.text}
             onChange={this.onTextChange}
           />
+
+          <label for="color">Colour:</label>
           <input
             type="text"
+            name="color"
             placeholder="Colour"
             value={this.state.color}
             onChange={this.onColorChange}
           />
           <button
             disabled={this.props.submitDisabled}
-            // onClick={this.props.handleClearSelected}
             className="small"
           >Submit</button>
         </form>

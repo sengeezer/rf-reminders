@@ -1,0 +1,19 @@
+form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+form input,
+form label {
+  float: left;
+}
+
+form input {
+  margin-bottom: 10px;
+  width: 70%;
+}
+
+form label {
+  width: 20%;
+}

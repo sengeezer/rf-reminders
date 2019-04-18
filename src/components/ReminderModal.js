@@ -6,10 +6,13 @@ import Modal from 'react-modal';
 import ReminderForm from './ReminderForm';
 import { createReminder } from '../actions/reminder';
 
+import './ReminderModal.css';
+
 class ReminderModal extends Component {
   onSubmit(reminder) {
     this.props.createReminder(reminder);
     // this.props.history.push('/');
+    this.props.handleModalClose();
   }
   render() {
     return (
