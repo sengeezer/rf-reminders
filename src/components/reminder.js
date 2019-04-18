@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './Reminder.css';
+
 class Reminder extends Component {
   constructor(props) {
     super(props);
@@ -7,16 +9,19 @@ class Reminder extends Component {
       month: '',
       day: '',
       year: '',
-      time: '',
+      time: '00:00',
       text: 'Default text',
-      color: '',
+      color: 'blue',
       isCurrent: false,
     };
   }
   render() {
     return (
-      <div>
-        {this.props.reminderText}
+      <div className="reminder">
+        <ul>
+          <li>{this.state.time}</li>
+          <li style={{color: this.state.color}}>{this.state.text}</li>
+        </ul>
       </div>
     );
   }

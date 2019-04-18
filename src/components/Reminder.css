@@ -1,0 +1,16 @@
+.reminder ul {
+  list-style: none;
+  margin: 0 0 5px 0;
+  padding: 0;
+}
+
+.reminder  ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.reminder ul li {
+  float: left;
+  padding: 0 5px 0 0;
+}

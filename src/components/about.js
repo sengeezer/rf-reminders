@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Calendar from 'react-calendar';
 
 import TileContent from './TileContent';
+import Reminder from './Reminder';
 
 import './about.css';
 
@@ -38,6 +39,8 @@ class About extends Component {
             onClickDay={this.handleDaySelect}
             tileContent={({ date, view }) => (<TileContent date={date} tileView={view} tileText="Sample" />)}
         />
+
+        <Reminder />
       </div>
     );
   }

@@ -23,7 +23,7 @@ class TileContent extends Component {
     return (
       <div>
         {this.props.tileText}
-        {(this.props.date).toString()}
+        {/* {(this.props.date).toString()} */}
         <button
           className="addReminder__button"
           onClick={this.handleButtonClick}
