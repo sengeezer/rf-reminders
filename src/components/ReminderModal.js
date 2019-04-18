@@ -26,10 +26,10 @@ class ReminderModal extends Component {
   }
 }
 
-Modal.setAppElement('#app');
+Modal.setAppElement('#root');
 
-const mapStateToProps = ({ reminder }) => ({
-  isCreating: reminder.isCreating,
+const mapStateToProps = ({ reminders }) => ({
+  isCreating: reminders.isCreating,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

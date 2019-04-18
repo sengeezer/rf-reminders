@@ -9,6 +9,7 @@ class TileContent extends Component {
     this.state = {
       shouldOpen: false,
     }
+    this.handleButtonClick = this.handleButtonClick.bind(this);
   }
   handleButtonClick(e) {
     e.preventDefault();
