@@ -10,10 +10,14 @@ class TileContent extends Component {
       shouldOpen: false,
     }
     this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
   }
   handleButtonClick(e) {
     e.preventDefault();
     this.setState(() => ({ shouldOpen: true }));
+  }
+  handleModalClose() {
+    this.setState(() => ({ shouldOpen: false }));
   }
   render() {
     return (
@@ -24,7 +28,11 @@ class TileContent extends Component {
           className="addReminder__button"
           onClick={this.handleButtonClick}
         >+</button>
-        <ReminderModal reminderDate={this.props.date} shouldOpen={this.state.shouldOpen} />
+        <ReminderModal
+          reminderDate={this.props.date}
+          shouldOpen={this.state.shouldOpen}
+          handleModalClose={this.handleModalClose}
+        />
       </div>
     );
   }

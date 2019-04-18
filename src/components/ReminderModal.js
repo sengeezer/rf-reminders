@@ -15,7 +15,7 @@ class ReminderModal extends Component {
     return (
       <Modal
         isOpen={!!this.props.shouldOpen}
-        onRequestClose={this.props.handleClearSelected}
+        onRequestClose={this.props.handleModalClose}
         contentLabel="Create or modify reminder"
         closeTimeoutMS={200}
         className="modal"
