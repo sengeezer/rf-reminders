@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 
+import ReminderList from './ReminderList';
 import ReminderModal from './ReminderModal';
 
 class TileContent extends Component {
@@ -22,8 +23,7 @@ class TileContent extends Component {
   render() {
     return (
       <div>
-        {this.props.tileText}
-        {/* {(this.props.date).toString()} */}
+        <ReminderList reminders={[]} />
         <button
           className="addReminder__button"
           onClick={this.handleButtonClick}

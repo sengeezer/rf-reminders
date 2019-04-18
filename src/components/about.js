@@ -37,7 +37,7 @@ class About extends Component {
             locale={'en-GB'}
             selectRange={false}
             onClickDay={this.handleDaySelect}
-            tileContent={({ date, view }) => (<TileContent date={date} tileView={view} tileText="Sample" />)}
+            tileContent={({ date, view }) => (<TileContent date={date} tileView={view} />)}
         />
 
         <Reminder />
