@@ -1,0 +1,10 @@
+ul.reminderList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.reminderList li {
+  margin: 0;
+  padding-left: 0;
+}

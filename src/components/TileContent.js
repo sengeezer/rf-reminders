@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import moment from 'moment';
 
 import ReminderList from './ReminderList';
 import ReminderModal from './ReminderModal';
@@ -21,6 +22,7 @@ class TileContent extends Component {
     this.setState(() => ({ shouldOpen: false }));
   }
   render() {
+    console.log('date:', moment(this.props.date).day());
     return (
       <div>
         <ReminderList reminders={[]} />

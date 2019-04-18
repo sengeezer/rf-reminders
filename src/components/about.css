@@ -56,6 +56,10 @@ button.react-calendar__tile:nth-of-type(n+29):nth-last-child(n+1) {
   font-size: 0.85em;
 }
 
+.react-calendar__month-view__days__day--weekend {
+  color: rgb(116, 114, 114);
+}
+
 .react-calendar__tile button.addReminder__button {
   position: absolute;
   bottom: 5px;
