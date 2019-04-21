@@ -6,7 +6,7 @@ import './ReminderForm.css';
 class ReminderForm extends Component {
   constructor(props) {
     super(props);
-    // TODO: Capture createdAt for ordering within same date, handle in form date change
+    // TODO: Handle in form date change
     this.state = {
       month: props.reminderDate ? props.reminderDate.month : '04',
       day: props.reminderDate ? props.reminderDate.day : '02',
@@ -59,6 +59,11 @@ class ReminderForm extends Component {
         createdAt: this.state.createdAt.valueOf(),
       });
     }
+  }
+  onDelete(e) {
+    e.preventDefault();
+    // TODO: implement reminder ID
+    this.props.onDelete(this.state.reminder.id);
   }
   render() {
     return (
@@ -125,6 +130,11 @@ class ReminderForm extends Component {
             className="small"
           >Submit</button>
         </form>
+        <button
+          disabled={this.props.deleteDisabled}
+          onClick={this.onDelete}
+          className="small"
+        >Delete Reminder</button>
       </div>
     );
   }

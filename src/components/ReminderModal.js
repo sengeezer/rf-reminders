@@ -4,13 +4,17 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 
 import ReminderForm from './ReminderForm';
-import { createReminder } from '../actions/reminder';
+import { createReminder, updateReminder, deleteReminder } from '../actions/reminder';
 
 import './ReminderModal.css';
 
 class ReminderModal extends Component {
   onSubmit(reminder) {
     this.props.createReminder(reminder);
+    this.props.handleModalClose();
+  }
+  onDelete(reminder) {
+    this.props.deleteReminder(reminder);
     this.props.handleModalClose();
   }
   render() {
@@ -24,6 +28,7 @@ class ReminderModal extends Component {
       >
         <ReminderForm
           onSubmit={this.onSubmit}
+          onDelete={this.onDelete}
           submitDisabled={this.props.isCreating}
           reminderDate={this.props.reminderDate}
         />
@@ -40,6 +45,8 @@ const mapStateToProps = ({ reminders }) => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   createReminder,
+  updateReminder,
+  deleteReminder,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReminderModal);
