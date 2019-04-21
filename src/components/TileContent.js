@@ -7,9 +7,17 @@ import ReminderModal from './ReminderModal';
 class TileContent extends Component {
   constructor(props) {
     super(props);
+
+    const tileDateObj = this.props.date;
     // TODO: Should this go into redux?
     this.state = {
       shouldOpen: false,
+      tileDate: {
+        month: tileDateObj.month(),
+        day: tileDateObj.day(),
+        year: tileDateObj.year(),
+        time: `${tileDateObj.hour()}:${tileDateObj.minute()}`,
+      },
     }
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.handleModalClose = this.handleModalClose.bind(this);
@@ -30,8 +38,10 @@ class TileContent extends Component {
           className="addReminder__button"
           onClick={this.handleButtonClick}
         >+</button>
+        {/* TODO: Communicate form mode (CRUD) */}
         <ReminderModal
-          reminderDate={this.props.date}
+          // reminderDate={this.props.date}
+          reminderDate={this.state.tileDate}
           shouldOpen={this.state.shouldOpen}
           handleModalClose={this.handleModalClose}
         />

@@ -6,15 +6,15 @@ import './ReminderForm.css';
 class ReminderForm extends Component {
   constructor(props) {
     super(props);
+    // TODO: Capture createdAt for ordering within same date, handle in form date change
     this.state = {
-      date: props.reminder ? moment(props.reminder.date) : moment(),
-      // TODO: Break down this.state.date into components
-      month: props.reminder ? props.reminder.month : '04',
-      day: props.reminder ? props.reminder.day : '02',
-      year: props.reminder ? props.reminder.year : '2019',
-      time: props.reminder ? props.reminder.time : '00:00',
+      month: props.reminderDate ? props.reminderDate.month : '04',
+      day: props.reminderDate ? props.reminderDate.day : '02',
+      year: props.reminderDate ? props.reminderDate.year : '2019',
+      time: props.reminderDate ? props.reminderDate.time : '00:00',
       text: props.reminder ? props.reminder.text : 'Reminder',
       color: props.reminder ? props.reminder.color : 'blue',
+      createdAt: props.reminder ? moment(props.reminder.createdAt) : moment(),
       error: '',
     }
   }
@@ -45,7 +45,7 @@ class ReminderForm extends Component {
   onSubmit(e) {
     e.preventDefault();
     
-    if (!this.state.text) {
+    if (!this.state.text || this.state.text.length > 30) {
       this.setState(() => ({ error: 'Please provide a valid reminder text.' }));
     } else {
       this.setState(() => ({ error: '' }));
@@ -56,6 +56,7 @@ class ReminderForm extends Component {
         time: this.state.time,
         text: this.state.text,
         color: this.state.color,
+        createdAt: this.state.createdAt.valueOf(),
       });
     }
   }
