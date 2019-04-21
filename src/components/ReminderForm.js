@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import uuid from 'uuid/v1';
 
 import './ReminderForm.css';
 
 class ReminderForm extends Component {
   constructor(props) {
     super(props);
-    // TODO: Handle in form date change
+    // TODO: Handle inside form date change
     this.state = {
       month: props.reminderDate ? props.reminderDate.month : '04',
       day: props.reminderDate ? props.reminderDate.day : '02',
@@ -15,6 +16,7 @@ class ReminderForm extends Component {
       text: props.reminder ? props.reminder.text : 'Reminder',
       color: props.reminder ? props.reminder.color : 'blue',
       createdAt: props.reminder ? moment(props.reminder.createdAt) : moment(),
+      id: props.reminder ? props.reminder.id : uuid(),
       error: '',
     }
   }
