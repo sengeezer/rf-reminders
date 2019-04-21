@@ -9,15 +9,16 @@ class TileContent extends Component {
   constructor(props) {
     super(props);
 
-    const tileDateObj = moment(this.props.date);
+    const tileDateObj = moment(this.props.date).format('MMMM,D,YYYY,HH,ss').split(',');
+    // console.log('TileContent props date moment:', tileDateObj);
     // TODO: Should this go into redux?
     this.state = {
       shouldOpen: false,
       tileDate: {
-        month: tileDateObj.month(),
-        day: tileDateObj.day(),
-        year: tileDateObj.year(),
-        time: `${tileDateObj.hour()}:${tileDateObj.minute()}`,
+        month: tileDateObj[0],
+        day: tileDateObj[1],
+        year: tileDateObj[2],
+        time: `${tileDateObj[3]}:${tileDateObj[4]}`,
       },
     }
     this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -40,7 +41,6 @@ class TileContent extends Component {
         >+</div>
         {/* TODO: Communicate form mode (CRUD) */}
         <ReminderModal
-          // reminderDate={this.props.date}
           reminderDate={this.state.tileDate}
           shouldOpen={this.state.shouldOpen}
           handleModalClose={this.handleModalClose}
