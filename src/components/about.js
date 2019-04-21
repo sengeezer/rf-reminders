@@ -20,9 +20,6 @@ class About extends Component {
   handleDaySelect(value) {
     console.log('Selected', value);
   }
-  onSubmit(reminder) {
-    // transmit reminder to redux
-  }
   render() {
     const { value } = this.state;
 

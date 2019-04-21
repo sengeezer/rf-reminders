@@ -58,21 +58,21 @@ class ReminderForm extends Component {
         time: this.state.time,
         text: this.state.text,
         color: this.state.color,
+        id: this.state.id,
         createdAt: this.state.createdAt.valueOf(),
       });
     }
   }
   onDelete(e) {
     e.preventDefault();
-    // TODO: implement reminder ID
-    this.props.onDelete(this.state.reminder.id);
+    this.props.onDelete(this.state.id);
   }
   render() {
     return (
       <div>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
-          <label for="month">Month:</label>
+          <label htmlFor="month">Month:</label>
           <input
             type="text"
             name="month"
@@ -81,7 +81,7 @@ class ReminderForm extends Component {
             onChange={this.onMonthChange}
           />
 
-          <label for="day">Day:</label>
+          <label htmlFor="day">Day:</label>
           <input
             type="text"
             name="day"
@@ -90,17 +90,17 @@ class ReminderForm extends Component {
             onChange={this.onDayChange}
           />
 
-          <label for="year">Year:</label>
+          <label htmlFor="year">Year:</label>
           <input
             type="text"
             name="year"
             placeholder="Year"
-            maxlength="4"
+            maxLength="4"
             value={this.state.year}
             onChange={this.onYearChange}
           />
 
-          <label for="time">Time:</label>
+          <label htmlFor="time">Time:</label>
           <input
             type="text"
             name="time"
@@ -109,17 +109,17 @@ class ReminderForm extends Component {
             onChange={this.onTimeChange}
           />
 
-          <label for="text">Text:</label>
+          <label htmlFor="text">Text:</label>
           <input
             type="text"
             name="text"
             placeholder="Reminder text"
-            maxlength="30"
+            maxLength="30"
             value={this.state.text}
             onChange={this.onTextChange}
           />
 
-          <label for="color">Colour:</label>
+          <label htmlFor="color">Colour:</label>
           <input
             type="text"
             name="color"
