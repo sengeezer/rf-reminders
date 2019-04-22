@@ -9,7 +9,14 @@ import { createReminder, updateReminder, deleteReminder } from '../actions/remin
 import './ReminderModal.css';
 
 class ReminderModal extends Component {
+  constructor(props) {
+    super(props);
+
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onDelete = this.onDelete.bind(this);
+  }
   onSubmit(reminder) {
+    // OK: console.log('onSubmit, reminder', reminder);
     this.props.createReminder(reminder);
     this.props.handleModalClose();
   }

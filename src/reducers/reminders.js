@@ -10,12 +10,6 @@ import {
 } from '../actions/reminder';
 
 const reducerDefaults = {
-  // month: '04',
-  // day: '02',
-  // year: '2019',
-  // time: '00:00',
-  // text: 'Reminder',
-  // color: 'blue',
   reminders: [],
   isCurrent: false,
   isCreating: false,
@@ -25,6 +19,7 @@ const reducerDefaults = {
 };
 
 export default (state = reducerDefaults, action) => {
+  // console.log('reducer action:', action);
   switch (action.type) {
     case CREATE_REMINDER_REQUESTED:
       return {

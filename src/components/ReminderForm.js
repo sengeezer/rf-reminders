@@ -19,6 +19,8 @@ class ReminderForm extends Component {
       id: props.reminder ? props.reminder.id : uuid(),
       error: '',
     }
+
+    this.onSubmit = this.onSubmit.bind(this);
   }
   onMonthChange(e) {
     const month = e.target.value;

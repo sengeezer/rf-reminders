@@ -10,14 +10,15 @@ export const UPDATE_REMINDER = 'reminder/UPDATE_REMINDER';
 export const DELETE_REMINDER_REQUESTED = 'reminder/DELETE_REMINDER_REQUESTED';
 export const DELETE_REMINDER = 'reminder/DELETE_REMINDER';
 
-export const createReminder = () => (
+export const createReminder = reminder => (
   dispatch => {
     dispatch({
       type: CREATE_REMINDER_REQUESTED
     });
 
     dispatch({
-      type: CREATE_REMINDER
+      type: CREATE_REMINDER,
+      reminder
     });
   }
 );
@@ -34,26 +35,29 @@ export const getReminder = () => (
   }
 );
 
-export const updateReminder = () => (
+export const updateReminder = (id, updates) => (
   dispatch => {
     dispatch({
       type: UPDATE_REMINDER_REQUESTED
     });
 
     dispatch({
-      type: UPDATE_REMINDER
+      type: UPDATE_REMINDER,
+      id,
+      updates,
     });
   }
 );
 
-export const deleteReminder = () => (
+export const deleteReminder = ({ id } = {}) => (
   dispatch => {
     dispatch({
       type: DELETE_REMINDER_REQUESTED
     });
 
     dispatch({
-      type: DELETE_REMINDER
+      type: DELETE_REMINDER,
+      id
     });
   }
 );
