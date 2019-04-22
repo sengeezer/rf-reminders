@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Reminder from './Reminder';
 import selectReminders from '../selectors/reminders';
 
+import { sortByDate } from '../actions/filters';
+
 import './ReminderList.css';
 
 class ReminderList extends Component {
+  constructor(props) {
+    super(props);
+
+    if (this.props.reminders.length > 0) {
+      this.props.sortByDate();
+    }
+  }
   render() {
     return (
       <div>
@@ -28,6 +38,11 @@ class ReminderList extends Component {
 
 const mapStateToProps = ({ reminders, filters }) => ({
   reminders: selectReminders(reminders, filters),
+  filters
 });
 
-export default connect(mapStateToProps)(ReminderList);
+const mapDispatchToProps = dispatch => bindActionCreators({
+  sortByDate,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReminderList);

@@ -19,7 +19,6 @@ const reducerDefaults = {
 };
 
 export default (state = reducerDefaults, action) => {
-  // console.log('reducer action:', action);
   switch (action.type) {
     case CREATE_REMINDER_REQUESTED:
       return {

@@ -8,6 +8,7 @@
 * Remove boilerplate test code from Home
 * Move About to '/'
 * Build out reminder editing
+* Store state in localStorage or database
 * Add unit and e2e tests
 
 ## Aknowledgements
