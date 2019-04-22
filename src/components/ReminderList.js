@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Reminder from './Reminder';
+import selectReminders from '../selectors/reminders';
 
 import './ReminderList.css';
 
@@ -24,4 +26,8 @@ class ReminderList extends Component {
   }
 }
 
-export default ReminderList;
+const mapStateToProps = ({ reminders }) => ({
+  reminders: selectReminders(reminders),
+});
+
+export default connect(mapStateToProps)(ReminderList);

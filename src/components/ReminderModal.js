@@ -16,7 +16,6 @@ class ReminderModal extends Component {
     this.onDelete = this.onDelete.bind(this);
   }
   onSubmit(reminder) {
-    // OK: console.log('onSubmit, reminder', reminder);
     this.props.createReminder(reminder);
     this.props.handleModalClose();
   }

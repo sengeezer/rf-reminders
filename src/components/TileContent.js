@@ -10,7 +10,6 @@ class TileContent extends Component {
     super(props);
 
     const tileDateObj = moment(this.props.date).format('MMMM,D,YYYY,HH,ss').split(',');
-    // console.log('TileContent props date moment:', tileDateObj);
     // TODO: Should this go into redux?
     this.state = {
       shouldOpen: false,
