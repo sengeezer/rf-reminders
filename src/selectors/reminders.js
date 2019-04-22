@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-const getMatchedReminders = (reminders, { text, sortBy, date }) => {
+const getMatchedReminders = ({ reminders }, { text, sortBy, date }) => {
   return reminders.filter((reminder) => {
     const reminderDate = moment(reminder.date);
     const compareDate = moment(date);

@@ -26,8 +26,8 @@ class ReminderList extends Component {
   }
 }
 
-const mapStateToProps = ({ reminders }) => ({
-  reminders: selectReminders(reminders),
+const mapStateToProps = ({ reminders, filters }) => ({
+  reminders: selectReminders(reminders, filters),
 });
 
 export default connect(mapStateToProps)(ReminderList);

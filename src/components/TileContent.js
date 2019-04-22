@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import { connect } from 'react-redux';
 
 import ReminderList from './ReminderList';
 import ReminderModal from './ReminderModal';
@@ -33,12 +34,12 @@ class TileContent extends Component {
   render() {
     return (
       <div>
-        <ReminderList reminders={[]} />
+        <ReminderList reminders={this.props.reminders} />
         <div
           className="addReminder__button"
           onClick={this.handleButtonClick}
         >+</div>
-        {/* TODO: Communicate form mode (CRUD) */}
+        {/* TODO: Communicate form mode? (CRUD) */}
         <ReminderModal
           reminderDate={this.state.tileDate}
           shouldOpen={this.state.shouldOpen}
@@ -49,4 +50,8 @@ class TileContent extends Component {
   }
 }
 
-export default TileContent;
+const mapStateToProps = ({ reminders }) => ({
+  reminders: reminders.reminders,
+});
+
+export default connect(mapStateToProps)(TileContent);

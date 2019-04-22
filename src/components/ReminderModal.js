@@ -47,6 +47,7 @@ Modal.setAppElement('#root');
 
 const mapStateToProps = ({ reminders }) => ({
   isCreating: reminders.isCreating,
+  // reminders: reminders.reminders,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
