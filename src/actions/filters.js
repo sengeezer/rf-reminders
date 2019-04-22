@@ -1,8 +1,8 @@
 export const SET_TEXT_FILTER_REQUESTED = 'reminder/SET_TEXT_FILTER_REQUESTED';
 export const SET_TEXT_FILTER = 'reminder/SET_TEXT_FILTER';
 
-export const SORT_BY_AMOUNT_REQUESTED = 'reminder/SORT_BY_AMOUNT_REQUESTED';
-export const SORT_BY_AMOUNT = 'reminder/SORT_BY_AMOUNT';
+export const SORT_BY_TIME_REQUESTED = 'reminder/SORT_BY_TIME_REQUESTED';
+export const SORT_BY_TIME = 'reminder/SORT_BY_TIME';
 
 export const SORT_BY_DATE_REQUESTED = 'reminder/SORT_BY_DATE_REQUESTED';
 export const SORT_BY_DATE = 'reminder/SORT_BY_DATE';
@@ -23,14 +23,14 @@ export const setTextFilter = (text = '') => (
   }
 );
 
-export const sortByAmount = () => (
+export const sortByTime = () => (
   dispatch => {
     dispatch({
-      type: SORT_BY_AMOUNT_REQUESTED
+      type: SORT_BY_TIME_REQUESTED
     });
 
     dispatch({
-      type: SORT_BY_AMOUNT,
+      type: SORT_BY_TIME,
     });
   }
 );

@@ -18,7 +18,7 @@ class About extends Component {
     this.setState({ value });
   }
   handleDaySelect(value) {
-    console.log('Selected', value);
+    // console.log('Selected', value);
   }
   render() {
     const { value } = this.state;
