@@ -17,6 +17,7 @@ class ReminderForm extends Component {
       color: props.reminder ? props.reminder.color : 'blue',
       createdAt: props.reminder ? moment(props.reminder.createdAt) : moment(),
       id: props.reminder ? props.reminder.id : uuid(),
+      fullDate: props.reminderDate ? props.reminderDate.fullDate : '',
       error: '',
     }
 
@@ -62,6 +63,7 @@ class ReminderForm extends Component {
         color: this.state.color,
         id: this.state.id,
         createdAt: this.state.createdAt.valueOf(),
+        fullDate: this.state.fullDate,
       });
     }
   }
