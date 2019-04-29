@@ -1,12 +1,11 @@
-// import moment from 'moment';
+import moment from 'moment';
 
 const getMatchedReminders = ({ reminders }, { text, sortBy, date }) => {
-  // console.log('selector:', text, sortBy, date);
   return reminders.filter((reminder) => {
     const reminderDate = reminder.fullDate;
-    const compareDate = date;
+    const compareDate = moment(date);
 
-    console.log('inside filter:', date, reminderDate);
+    console.log('inside filter:', compareDate, reminderDate);
 
     const dateMatch = compareDate ? compareDate.isSame(reminderDate, 'day') : true;
     const textMatch = typeof text !== 'string' || reminder.text.toLowerCase().includes(text.toLowerCase());

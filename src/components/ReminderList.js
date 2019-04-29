@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Reminder from './Reminder';
 import selectReminders from '../selectors/reminders';
 
-import { sortByDate } from '../actions/filters';
+import { setDate, sortByDate } from '../actions/filters';
 
 import './ReminderList.css';
 
@@ -16,9 +16,11 @@ class ReminderList extends Component {
     if (this.props.reminders.length > 0) {
       this.props.sortByDate();
     }
+    this.props.setDate(this.props.reminderListDate);
   }
   render() {
     // console.log('filters:', this.props.filters);
+    // console.log('filters:', this.props.reminderListDate);
     return (
       <div>
         <ul className="reminderList">
@@ -44,6 +46,7 @@ const mapStateToProps = ({ reminders, filters }) => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   sortByDate,
+  setDate,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReminderList);

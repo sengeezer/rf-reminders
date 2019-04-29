@@ -36,7 +36,7 @@ class TileContent extends Component {
   render() {
     return (
       <div>
-        <ReminderList reminders={this.props.reminders} />
+        <ReminderList reminders={this.props.reminders} reminderListDate={this.props.date} />
         <div
           className="addReminder__button"
           onClick={this.handleButtonClick}
