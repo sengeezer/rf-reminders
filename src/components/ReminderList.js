@@ -18,6 +18,7 @@ class ReminderList extends Component {
     }
   }
   render() {
+    // console.log('filters:', this.props.filters);
     return (
       <div>
         <ul className="reminderList">

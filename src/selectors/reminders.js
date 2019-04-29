@@ -6,7 +6,7 @@ const getMatchedReminders = ({ reminders }, { text, sortBy, date }) => {
     const reminderDate = reminder.fullDate;
     const compareDate = date;
 
-    console.log('inside filter:', date, reminder);
+    console.log('inside filter:', date, reminderDate);
 
     const dateMatch = compareDate ? compareDate.isSame(reminderDate, 'day') : true;
     const textMatch = typeof text !== 'string' || reminder.text.toLowerCase().includes(text.toLowerCase());
