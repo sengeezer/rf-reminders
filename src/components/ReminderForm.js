@@ -21,6 +21,12 @@ class ReminderForm extends Component {
       error: '',
     }
 
+    this.onMonthChange = this.onMonthChange.bind(this);
+    this.onDayChange = this.onDayChange.bind(this);
+    this.onYearChange = this.onYearChange.bind(this);
+    this.onTimeChange = this.onTimeChange.bind(this);
+    this.onTextChange = this.onTextChange.bind(this);
+    this.onColorChange = this.onColorChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
   onMonthChange(e) {

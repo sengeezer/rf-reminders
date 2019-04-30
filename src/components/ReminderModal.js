@@ -19,6 +19,10 @@ class ReminderModal extends Component {
     this.props.createReminder(reminder);
     this.props.handleModalClose();
   }
+  onUpdate(reminder) {
+    this.props.updateReminder(reminder);
+    this.props.handleModalClose();
+  }
   onDelete(reminder) {
     this.props.deleteReminder(reminder);
     this.props.handleModalClose();
