@@ -22,6 +22,8 @@ const reducerDefaults = {
 };
 
 export default (state = reducerDefaults, action) => {
+  // date is undefined
+  // console.log('filter reducer input:', action);
   switch (action.type) {
     case SET_TEXT_FILTER_REQUESTED:
       return {

@@ -13,14 +13,16 @@ class ReminderList extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      listDate: this.props.reminderListDate,
+    };
+
     if (this.props.reminders.length > 0) {
       this.props.sortByDate();
     }
     this.props.setDate(this.props.reminderListDate);
   }
   render() {
-    // console.log('filters:', this.props.filters);
-    // console.log('filters:', this.props.reminderListDate);
     return (
       <div>
         <ul className="reminderList">
@@ -39,9 +41,9 @@ class ReminderList extends Component {
   }
 }
 
-const mapStateToProps = ({ reminders, filters }) => ({
-  reminders: selectReminders(reminders, filters),
-  filters
+const mapStateToProps = ({ reminders, filters }, { reminderListDate }) => ({
+  reminders: selectReminders(reminders, filters, reminderListDate),
+  filters,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
