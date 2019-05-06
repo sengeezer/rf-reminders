@@ -8,3 +8,7 @@ ul.reminderList li {
   margin: 0;
   padding-left: 0;
 }
+
+.react-calendar__tile--active ul.reminderList li {
+  color: #fafafa;
+}
