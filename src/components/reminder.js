@@ -11,7 +11,7 @@ class Reminder extends Component {
   }
   render() {
     return (
-      <li className="reminder">
+      <li className="reminder" onClick={this.props.handleReminderSelect}>
         <ul>
           <li>{this.props.time}</li>
           <li style={{color: this.props.color}}>{this.props.text}</li>

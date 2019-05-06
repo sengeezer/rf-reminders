@@ -33,10 +33,17 @@ class TileContent extends Component {
   handleModalClose() {
     this.setState(() => ({ shouldOpen: false }));
   }
+  handleReminderSelect() {
+    // source of data = ?
+  }
   render() {
     return (
       <div>
-        <ReminderList reminders={this.props.reminders} reminderListDate={this.state.tileDate.fullDate} />
+        <ReminderList
+          reminders={this.props.reminders}
+          reminderListDate={this.state.tileDate.fullDate}
+          handleReminderSelect={this.handleReminderSelect}
+        />
         <div
           className="addReminder__button"
           onClick={this.handleButtonClick}

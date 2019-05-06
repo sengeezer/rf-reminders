@@ -7,7 +7,7 @@ import './app.css';
 const App = () => (
   <div className="container">
     <header>
-      <h1>RF Reminders</h1>
+      <h1>Reminders App</h1>
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>

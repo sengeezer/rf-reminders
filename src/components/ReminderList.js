@@ -21,6 +21,12 @@ class ReminderList extends Component {
       this.props.sortByDate();
     }
     this.props.setDate(this.props.reminderListDate);
+
+    this.handleReminderSelect = this.handleReminderSelect.bind(this);
+  }
+  handleReminderSelect(ev) {
+    ev.preventDefault();
+    this.props.handleReminderSelect();
   }
   render() {
     return (
@@ -31,7 +37,11 @@ class ReminderList extends Component {
               <li>No reminders found</li>
             ) : (
               this.props.reminders.map(reminder => (
-                <Reminder key={reminder.id} {...reminder} />
+                <Reminder
+                  key={reminder.id}
+                  {...reminder}
+                  handleReminderSelect={this.handleReminderSelect}
+                />
               ))
             )
           }
