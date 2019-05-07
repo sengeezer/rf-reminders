@@ -9,6 +9,7 @@ const getMatchedReminders = ({ reminders }, { text, sortBy, date }, listDate) =>
     return dateMatch && textMatch;
   }).sort((a, b) => {
     if (sortBy === 'date') {
+      // compare times instead
       return a.createdAt < b.createdAt ? 1 : -1;
     }
 
