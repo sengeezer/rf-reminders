@@ -25,16 +25,19 @@ class TileContent extends Component {
     }
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.handleModalClose = this.handleModalClose.bind(this);
+    this.handleReminderSelect = this.handleReminderSelect.bind(this);
   }
-  handleButtonClick(e) {
-    e.preventDefault();
+  handleButtonClick(ev) {
+    ev.preventDefault();
     this.setState(() => ({ shouldOpen: true }));
   }
   handleModalClose() {
     this.setState(() => ({ shouldOpen: false }));
   }
-  handleReminderSelect() {
+  handleReminderSelect(ev) {
     // source of data = ?
+    ev.preventDefault();
+    console.log(ev.currentTarget.dataset.id);
   }
   render() {
     return (

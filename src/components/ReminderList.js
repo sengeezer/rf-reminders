@@ -26,7 +26,7 @@ class ReminderList extends Component {
   }
   handleReminderSelect(ev) {
     ev.preventDefault();
-    this.props.handleReminderSelect();
+    this.props.handleReminderSelect(ev);
   }
   render() {
     return (
