@@ -1,5 +1,7 @@
 import React, { Component} from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { updateReminder } from '../actions/reminder';
 
 import ReminderList from './ReminderList';
 import ReminderModal from './ReminderModal';
@@ -37,7 +39,9 @@ class TileContent extends Component {
   handleReminderSelect(ev) {
     // source of data = ?
     ev.preventDefault();
-    console.log(ev.currentTarget.dataset.id);
+    const reminderId = ev.currentTarget.dataset.id;
+
+    this.setState(() => ({ reminderId }));
   }
   render() {
     return (
@@ -51,9 +55,10 @@ class TileContent extends Component {
           className="addReminder__button"
           onClick={this.handleButtonClick}
         >+</div>
-        {/* TODO: Communicate form mode? (CRUD) */}
+        {/* TODO: Communicate form mode (CRUD) */}
         <ReminderModal
           reminderDate={this.state.tileDate}
+          reminderId={this.state.reminderId}
           shouldOpen={this.state.shouldOpen}
           handleModalClose={this.handleModalClose}
         />
@@ -66,4 +71,8 @@ const mapStateToProps = ({ reminders }) => ({
   reminders: reminders.reminders,
 });
 
-export default connect(mapStateToProps)(TileContent);
+const mapDispatchToProps = dispatch => bindActionCreators({
+  updateReminder,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(TileContent);

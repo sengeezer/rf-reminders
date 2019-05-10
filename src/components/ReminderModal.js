@@ -36,11 +36,13 @@ class ReminderModal extends Component {
         closeTimeoutMS={200}
         className="modal"
       >
+      {/* TODO: Pass in entire reminder */}
         <ReminderForm
           onSubmit={this.onSubmit}
           onDelete={this.onDelete}
           submitDisabled={this.props.isCreating}
           reminderDate={this.props.reminderDate}
+          reminderId={this.props.reminderId}
         />
       </Modal>
     );
