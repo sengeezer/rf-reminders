@@ -34,6 +34,7 @@ class TileContent extends Component {
     this.setState(() => ({ shouldOpen: true }));
   }
   handleModalClose() {
+    // TODO: Reset selected reminder
     this.setState(() => ({ shouldOpen: false }));
   }
   handleReminderSelect(ev) {
@@ -41,7 +42,7 @@ class TileContent extends Component {
     ev.preventDefault();
     const reminderId = ev.currentTarget.dataset.id;
 
-    this.setState(() => ({ reminderId }));
+    this.setState(() => ({ shouldOpen: true, reminderId }));
   }
   render() {
     return (

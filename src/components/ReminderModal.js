@@ -12,8 +12,13 @@ class ReminderModal extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      reminder: {},
+    }
+
     this.onSubmit = this.onSubmit.bind(this);
     this.onDelete = this.onDelete.bind(this);
+    this.onRequestClose = this.onRequestClose.bind(this);
   }
   onSubmit(reminder) {
     this.props.createReminder(reminder);
@@ -27,22 +32,25 @@ class ReminderModal extends Component {
     this.props.deleteReminder(reminder);
     this.props.handleModalClose();
   }
+  onRequestClose() {
+    this.setState(() => ({ reminder: {} }));
+    this.props.handleModalClose();
+  }
   render() {
     return (
       <Modal
         isOpen={!!this.props.shouldOpen}
-        onRequestClose={this.props.handleModalClose}
-        contentLabel="Create or modify reminder"
+        onRequestClose={this.onRequestClose}
+        contentLabel="Create or update reminder"
         closeTimeoutMS={200}
         className="modal"
       >
-      {/* TODO: Pass in entire reminder */}
         <ReminderForm
           onSubmit={this.onSubmit}
           onDelete={this.onDelete}
           submitDisabled={this.props.isCreating}
           reminderDate={this.props.reminderDate}
-          reminderId={this.props.reminderId}
+          reminder={this.props.reminder}
         />
       </Modal>
     );
@@ -51,8 +59,9 @@ class ReminderModal extends Component {
 
 Modal.setAppElement('#root');
 
-const mapStateToProps = ({ reminders }) => ({
+const mapStateToProps = ({ reminders }, props) => ({
   isCreating: reminders.isCreating,
+  reminder: reminders.reminders.find(reminder => reminder.id === props.reminderId),
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

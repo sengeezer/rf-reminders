@@ -9,15 +9,15 @@ class ReminderForm extends Component {
     super(props);
     // TODO: Handle inside form date change
     this.state = {
-      month: props.reminderDate ? props.reminderDate.month : '04',
-      day: props.reminderDate ? props.reminderDate.day : '02',
-      year: props.reminderDate ? props.reminderDate.year : '2019',
-      time: props.reminderDate ? props.reminderDate.time : '00:00',
+      month: props.reminder ? props.reminder.month : props.reminderDate.month,
+      day: props.reminder ? props.reminder.day : props.reminderDate.day,
+      year: props.reminder ? props.reminder.year : props.reminderDate.year,
+      time: props.reminder ? props.reminder.time : props.reminderDate.time,
       text: props.reminder ? props.reminder.text : 'Reminder',
       color: props.reminder ? props.reminder.color : 'blue',
       createdAt: props.reminder ? moment(props.reminder.createdAt) : moment(),
       id: props.reminder ? props.reminder.id : uuid(),
-      fullDate: props.reminderDate ? props.reminderDate.fullDate : '',
+      fullDate: props.reminder ? props.reminder.fullDate : props.reminderDate.fullDate,
       error: '',
     }
 
