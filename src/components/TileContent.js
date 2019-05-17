@@ -35,7 +35,7 @@ class TileContent extends Component {
   }
   handleModalClose() {
     // TODO: Reset selected reminder
-    this.setState(() => ({ shouldOpen: false }));
+    this.setState(() => ({ shouldOpen: false, reminderId: null }));
   }
   handleReminderSelect(ev) {
     // source of data = ?

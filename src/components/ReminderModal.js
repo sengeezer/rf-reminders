@@ -12,10 +12,6 @@ class ReminderModal extends Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   reminder: {},
-    // }
-
     this.onSubmit = this.onSubmit.bind(this);
     this.onUpdate = this.onUpdate.bind(this);
     this.onDelete = this.onDelete.bind(this);
@@ -34,7 +30,6 @@ class ReminderModal extends Component {
     this.props.handleModalClose();
   }
   onRequestClose() {
-    // this.setState(() => ({ reminder: {} }));
     this.props.handleModalClose();
   }
   render() {
