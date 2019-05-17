@@ -18,6 +18,8 @@ class ReminderModal extends Component {
     this.onRequestClose = this.onRequestClose.bind(this);
   }
   onSubmit(reminder) {
+    // create onCreate method
+    // use GET_REMINDER to determine if reminder exists
     this.props.createReminder(reminder);
     this.props.handleModalClose();
   }
