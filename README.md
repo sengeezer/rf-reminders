@@ -4,10 +4,9 @@
 
 ## Next steps
 
-* Fix reminder by date filtering
+* Fix reminder editing
 * Remove boilerplate test code from Home
 * Move About to '/'
-* Build out reminder editing
 * Store state in localStorage or database
 * Add unit and e2e tests
 
@@ -19,7 +18,11 @@
 
 ----
 
-## Scripts
+## Running the App (Scripts)
+
+### `npm install`
+
+Installs all dependencies.
 
 ### `npm start`
 
@@ -32,18 +35,3 @@ Launches the test runner in the interactive watch mode.
 ### `npm run build`
 
 Builds the app for production to the `build` folder.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-## Learn More
-
-* [Code Splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-* [Analyzing the Bundle Size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-* [Making a Progressive Web App](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-* [Advanced Configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-* [Deployment](https://facebook.github.io/create-react-app/docs/deployment)
-* [`npm run build` fails to minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
